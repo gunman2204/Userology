@@ -3,12 +3,11 @@
 import React, { useEffect, useState} from 'react'
 import {useRouter} from "next/navigation"
 import axios from 'axios';
-// import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 // const City = () => {
 
-//     const searchParams = useSearchParams();
-//     const cityName = React.use(searchParams.get("name"));
+//     
 //     return <div cityName={cityName}>{cityName}</div>;
 // }
 // const temp=()=>{
@@ -28,9 +27,11 @@ const CityWeatherPage = (props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [forecast, setForecast] = useState(null);
-    const [cityName,setCityName]=useState('London')   
+    // const [cityName,setCityName]=useState('London')   
     // const {} =router.query;
     // console.log(cityName);
+    const searchParams = useSearchParams();
+    const cityName = searchParams.get("name")||'London';
     
     
 

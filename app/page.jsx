@@ -5,7 +5,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClipLoader } from "react-spinners";
 import { useRouter } from 'next/navigation';
-import CitySearch from "./components/CitySearch";
 
 
 const Dashboard = () => {
