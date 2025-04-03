@@ -229,7 +229,7 @@ const Dashboard = () => {
           {weatherApiStatus === 0 ? <p className='text-red-500'>Weather API is not responding</p> : <p className='text-green-500'>Weather API is responding</p>}
         </div>
         {weatherData.map((weather, index) => (
-          <div onClick={() => {setCity(weather.name),router.push(`/city`)}} className="space-y-6 mt-9 border-t-* border-black-500" key={index}>
+          <div onClick={() => {router.push('/city')}} className="space-y-6 mt-9 border-t-* border-black-500" key={index}>
             <h2  className="text-xl text-center font-medium">{weather.name}</h2>
             <div className="flex justify-between items-center">
               {/* <span className="text-xs bg-blue-500 px-2 py-1 rounded">Now</span> */}
