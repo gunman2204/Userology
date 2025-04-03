@@ -1,10 +1,12 @@
 "use client";
 // import city from '../page'
 import React, { useEffect, useState} from 'react'
+import { Suspense } from 'react';
 import {useRouter} from "next/navigation"
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import CitySearch from "../components/CitySearch";
 // const City = () => {
 
 //     
@@ -20,8 +22,15 @@ import Image from 'next/image';
 //     </Suspense>
 //     )
 // }
+export function CityPage(){
+    return (
+      <Suspense fallback={<p>Loading...</p>}>
+        <CitySearch />
+      </Suspense>
+    );
+  }
 
-const CityWeatherPage = (props) => {
+const CityWeatherPage = ({city}) => {
     const router = useRouter();
     const [weatherData, setWeatherData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -30,8 +39,8 @@ const CityWeatherPage = (props) => {
     // const [cityName,setCityName]=useState('London')   
     // const {} =router.query;
     // console.log(cityName);
-    const searchParams = useSearchParams();
-    const cityName = searchParams.get("name")||'London';
+    // const searchParams = useSearchParams();
+    const cityName = 'London';
     
     
 

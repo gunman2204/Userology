@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClipLoader } from "react-spinners";
 import { useRouter } from 'next/navigation';
+import Citysearch from './components/CitySearch';
 
 
 const Dashboard = () => {
@@ -97,6 +98,7 @@ const Dashboard = () => {
   const [weatherApiStatus, setWeatherApiStatus] = useState(1);
   const [newsApiStatus, setNewsApiStatus] = useState(1);
   const [loading, setLoading] = useState(false)
+  const [city,setCity]=usestate('') 
 
 
   useEffect(() => {
@@ -229,7 +231,7 @@ const Dashboard = () => {
           {weatherApiStatus === 0 ? <p className='text-red-500'>Weather API is not responding</p> : <p className='text-green-500'>Weather API is responding</p>}
         </div>
         {weatherData.map((weather, index) => (
-          <div onClick={() => router.push(`/city?name=${weather.name}`)} className="space-y-6 mt-9 border-t-* border-black-500" key={index}>
+          <div onClick={() => {setCity(weather.name),router.push(`/city`)}} className="space-y-6 mt-9 border-t-* border-black-500" key={index}>
             <h2  className="text-xl text-center font-medium">{weather.name}</h2>
             <div className="flex justify-between items-center">
               {/* <span className="text-xs bg-blue-500 px-2 py-1 rounded">Now</span> */}

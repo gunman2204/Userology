@@ -1,17 +1,17 @@
-// "use client";
-// import {  useEffect } from "react";
+"use client";
+import {  useEffect } from "react";
 
-// export default function CitySearch({ setCityName }) {
-//     <Suspense>
-//   {const searchParams = useSearchParams();
-//   const cityName = searchParams.get("name")};
-//   </Suspense>
+export default function CitySearch({ setCityName }) {
+    
+    const searchParams = useSearchParams();
+    const cityName = searchParams.get("name"); // Extract ?name=NewYork
+  
 
-//   useEffect(() => {
-//     if (cityName) {
-//       setCityName(cityName);
-//     }
-//   }, [cityName, setCityName]);
+return (
+    <div>
+      <h1>Weather in {cityName || "Unknown City"}</h1>
+    </div>
+  );
+}
+  
 
-//   return null; // No UI needed
-// }
