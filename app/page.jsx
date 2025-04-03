@@ -5,7 +5,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClipLoader } from "react-spinners";
 import { useRouter } from 'next/navigation';
-import Citysearch from './components/CitySearch';
 
 
 const Dashboard = () => {
@@ -98,7 +97,6 @@ const Dashboard = () => {
   const [weatherApiStatus, setWeatherApiStatus] = useState(1);
   const [newsApiStatus, setNewsApiStatus] = useState(1);
   const [loading, setLoading] = useState(false)
-  const [city,setCity]=usestate('') 
 
 
   useEffect(() => {

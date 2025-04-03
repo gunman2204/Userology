@@ -6,7 +6,6 @@ import {useRouter} from "next/navigation"
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import CitySearch from "../components/CitySearch";
 // const City = () => {
 
 //     
